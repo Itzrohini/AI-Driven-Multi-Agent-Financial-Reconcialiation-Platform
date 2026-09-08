@@ -1,0 +1,23 @@
+[
+  {
+    "invoice_id": "INV-5001",
+    "customer_id": "CUS-1001",
+    "amount_due": 10000.0,
+    "due_date": "2026-08-28T10:37:53.428826",
+    "status": "open"
+  },
+  {
+    "invoice_id": "INV-5002",
+    "customer_id": "CUS-1002",
+    "amount_due": 15000.0,
+    "due_date": "2026-09-12T10:37:53.428826",
+    "status": "open"
+  },
+  {
+    "invoice_id": "INV-5003",
+    "customer_id": "CUS-1003",
+    "amount_due": 50000.0,
+    "due_date": "2026-08-03T10:37:53.428826",
+    "status": "open"
+  }
+]

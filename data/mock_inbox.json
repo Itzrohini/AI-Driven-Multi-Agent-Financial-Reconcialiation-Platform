@@ -1,0 +1,13 @@
+[
+  {
+    "id": "msg_1714859000.123",
+    "payment_id": "PAY-999",
+    "to": "contact@globex.com",
+    "from": "ar-automation@globex.com",
+    "subject": "Action Required: Missing Purchase Order for Payment PAY-999",
+    "body": "Dear Globex Team,\n\nWe have received your payment (PAY-999) for $15,000.00 intended to cover Invoice INV-5002.\n\nHowever, per Section 4.2 of our Master Service Agreement, any invoice exceeding $10,000.00 strictly requires a valid Purchase Order (PO) number. Since no PO number was provided with this remittance, we are required to hold the payment until one is supplied.\n\nPlease reply to this email with the valid PO number so we can process your payment and apply it to your account balance.\n\nThank you,\nAccounts Receivable",
+    "timestamp": "2026-09-04T10:45:00.000Z",
+    "status": "sent",
+    "reply": null
+  }
+]

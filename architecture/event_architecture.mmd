@@ -1,0 +1,17 @@
+﻿```mermaid
+sequenceDiagram
+    participant Webhook as Payment Gateway
+    participant API as FastAPI
+    participant Queue as Task Queue
+    participant Worker as LangGraph Worker
+    participant DB as MongoDB
+
+    Webhook->>API: POST /event (Exception)
+    API->>DB: Create Event Record
+    API->>Queue: Push Task (event_id)
+    API-->>Webhook: 202 Accepted
+    
+    Queue->>Worker: Pop Task
+    Worker->>Worker: Run Agent Workflow
+    Worker->>DB: Update Investigation State
+```

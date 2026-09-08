@@ -1,0 +1,40 @@
+﻿```mermaid
+flowchart TD
+    subgraph External
+        ERP[Mock ERP]
+        PaymentGateway[Payment Streams]
+    end
+
+    subgraph API Layer
+        FastAPI[FastAPI Gateway]
+    end
+
+    subgraph Orchestration
+        LangGraph[LangGraph State Engine]
+    end
+
+    subgraph Agents
+        OrchAgent[Investigation Agent]
+        PayAgent[Payment Agent]
+        ARAgent[AR/AP Agent]
+        RiskAgent[Risk Agent - ML]
+        TreasuryAgent[Treasury Agent]
+        PolicyAgent[Policy Agent - RAG]
+        DecAgent[Decision Agent]
+    end
+
+    subgraph Data
+        Mongo[(MongoDB)]
+        Qdrant[(Qdrant Vector DB)]
+    end
+
+    PaymentGateway -->|Webhook| FastAPI
+    FastAPI -->|Start Workflow| LangGraph
+    LangGraph --> OrchAgent
+    OrchAgent --> PayAgent & ARAgent & RiskAgent & TreasuryAgent & PolicyAgent
+    PayAgent & ARAgent & RiskAgent & TreasuryAgent & PolicyAgent --> DecAgent
+    
+    PolicyAgent <--> Qdrant
+    FastAPI <--> Mongo
+    DecAgent -->|Auto-Resolve| ERP
+```

@@ -1,0 +1,17 @@
+﻿```mermaid
+flowchart TD
+    subgraph Docker Compose
+        API[FastAPI App container]
+        Worker[Celery/Background Worker container]
+        Mongo[(MongoDB container)]
+        Qdrant[(Qdrant container)]
+        Redis[(Redis container for queues)]
+    end
+    
+    API <--> Mongo
+    Worker <--> Mongo
+    Worker <--> Qdrant
+    Worker <--> LLM[External LLM API]
+    API <--> Redis
+    Worker <--> Redis
+```

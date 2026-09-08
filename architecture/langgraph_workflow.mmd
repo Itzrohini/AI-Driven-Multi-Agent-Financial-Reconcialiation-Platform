@@ -1,0 +1,28 @@
+﻿```mermaid
+stateDiagram-v2
+    [*] --> ReceiveEvent
+    ReceiveEvent --> Orchestrator
+    
+    Orchestrator --> PaymentNode : if needs payment data
+    Orchestrator --> ARNode : if needs ledger data
+    Orchestrator --> RiskNode : if needs risk score
+    Orchestrator --> PolicyNode : if needs rules
+    Orchestrator --> TreasuryNode : if needs cash impact
+    
+    PaymentNode --> Orchestrator
+    ARNode --> Orchestrator
+    RiskNode --> Orchestrator
+    PolicyNode --> Orchestrator
+    TreasuryNode --> Orchestrator
+    
+    Orchestrator --> DecisionNode : if investigation complete
+    
+    DecisionNode --> AutoResolve : confidence >= 95%
+    DecisionNode --> HumanReview : confidence < 95%
+    
+    HumanReview --> ExecuteHumanAction
+    AutoResolve --> AuditLog
+    ExecuteHumanAction --> AuditLog
+    
+    AuditLog --> [*]
+```

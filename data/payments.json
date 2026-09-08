@@ -1,0 +1,30 @@
+[
+  {
+    "payment_id": "PAY-9001",
+    "sender_name": "Acme Corp Accounts Payable",
+    "amount": 10000.0,
+    "date": "2026-09-02T15:57:06.987800",
+    "remittance_text": "Payment for INV-5001",
+    "method": "ACH"
+  },
+  {
+    "payment_id": "PAY-9002",
+    "sender_name": "Globex Treasury",
+    "amount": 12500.0,
+    "date": "2026-09-02T15:57:06.987800",
+    "remittance_text": "Invoice 5002 payment",
+    "method": "WIRE"
+  },
+  {
+    "payment_id": "PAY-9003",
+    "sender_name": "Unknown Entity XYZ",
+    "amount": 48000.0,
+    "date": "2026-09-02T15:57:06.987800",
+    "remittance_text": "For Initech",
+    "method": "WIRE",
+    "flags": [
+      "suspicious_origin",
+      "amount_mismatch"
+    ]
+  }
+]

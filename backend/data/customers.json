@@ -1,0 +1,27 @@
+[
+  {
+    "customer_id": "CUS-1001",
+    "name": "Acme Corp",
+    "industry": "Manufacturing",
+    "risk_tier": "low",
+    "available_credit": 0.0,
+    "standing": "good"
+  },
+  {
+    "customer_id": "CUS-1002",
+    "name": "Globex Inc",
+    "industry": "Technology",
+    "risk_tier": "medium",
+    "available_credit": 2500.0,
+    "standing": "good"
+  },
+  {
+    "customer_id": "CUS-1003",
+    "name": "Initech",
+    "industry": "Software",
+    "risk_tier": "high",
+    "available_credit": 0.0,
+    "standing": "poor",
+    "notes": "History of late payments and unexplained short pays."
+  }
+]

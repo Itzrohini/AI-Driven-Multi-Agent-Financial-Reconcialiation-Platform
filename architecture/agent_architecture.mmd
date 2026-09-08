@@ -1,0 +1,14 @@
+﻿```mermaid
+flowchart TD
+    A[Investigation Orchestrator] --> B[Payment Intelligence]
+    A --> C[AR/AP Ledger]
+    A --> D[Risk & Fraud]
+    A --> E[Treasury]
+    A --> F[Policy & Rules]
+    
+    B & C & D & E & F --> G{Decision Engine}
+    
+    G -->|High Confidence| H[Auto Execute Tool]
+    G -->|Medium Confidence| I[Human Review Queue]
+    G -->|Low Confidence / High Risk| J[Escalation Queue]
+```
