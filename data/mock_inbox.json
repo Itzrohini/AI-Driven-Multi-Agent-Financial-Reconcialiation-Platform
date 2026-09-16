@@ -9,5 +9,16 @@
     "timestamp": "2026-09-04T10:45:00.000Z",
     "status": "sent",
     "reply": null
+  },
+  {
+    "id": "msg_1789091488.169825",
+    "payment_id": "PAY-999",
+    "to": "contact@globex.com",
+    "from": "ar-automation@globex.com",
+    "subject": "Purchase Order Required for Invoice INV-5002 (Payment PAY-999)",
+    "body": "Dear Globex Procurement Team,\n\nThank you for your payment of $15,000.00 regarding Invoice INV-5002 (Payment Reference: PAY-999).\n\nPer Section 4.2 of the Globex Master Service Agreement, a valid Purchase Order (PO) number is required for all invoices exceeding $10,000.00 USD before payment processing can be completed.\n\nCould you please provide the valid PO number for this invoice at your earliest convenience so we can apply the payment to your account?\n\nThank you for your assistance.\n\nBest regards,\nAccounts Receivable Team",
+    "timestamp": "2026-09-11T07:21:28.169840",
+    "status": "sent",
+    "reply": null
   }
 ]

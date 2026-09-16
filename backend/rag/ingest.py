@@ -35,7 +35,12 @@ def extract_frontmatter_and_content(file_path):
 
 def main():
     print(f"Connecting to Qdrant at {QDRANT_URL}...")
-    client = QdrantClient(url=QDRANT_URL)
+    try:
+        client = QdrantClient(url=QDRANT_URL)
+        client.get_collections()
+    except Exception as e:
+        print(f"Server unavailable ({e}), falling back to local file-based Qdrant...")
+        client = QdrantClient(path=os.path.join(os.path.dirname(__file__), "qdrant_db"))
     
     print("Loading embedding model...")
     embedding_model = TextEmbedding(model_name="BAAI/bge-small-en-v1.5")

@@ -7,7 +7,13 @@ COLLECTION_NAME = "corporate_policies"
 
 # Initialize a global client to reuse connections
 try:
-    client = QdrantClient(url=QDRANT_URL)
+    try:
+        client = QdrantClient(url=QDRANT_URL)
+        client.get_collections()
+    except Exception as e:
+        print(f"Server unavailable ({e}), falling back to local file-based Qdrant...")
+        client = QdrantClient(path=os.path.join(os.path.dirname(__file__), "qdrant_db"))
+        
     embedding_model = TextEmbedding(model_name="BAAI/bge-small-en-v1.5")
 except Exception as e:
     client = None
